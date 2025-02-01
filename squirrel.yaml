@@ -63,7 +63,7 @@ style:
   # Space between preedit and candidates in non-inline mode
   spacing: 8
   # A number greater than 0 renders shadow around high-lighted candidate
-  shadow_size: 0
+  shadow_size: 3
   # Controls non-hililighted candidate background size, relative to highlighted
   # Nagetive means shrink, positive meas expand
   #surrounding_extra_expansion: 0
