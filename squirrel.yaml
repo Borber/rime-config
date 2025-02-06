@@ -75,7 +75,7 @@ style:
 
   # adjust the base line of text
   #base_offset: 0
-  font_face: 'Avenir'
+  font_face: 'JetBrainsMono Nerd Font, JetBrainsMono Nerd Font Mono, LXGW Bright, monospace'
   font_point: 16
   #label_font_face: 'Avenir'
   #label_font_point: 12
