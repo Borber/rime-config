@@ -93,7 +93,7 @@ style:
     max_width: 0                           # 候选框最大宽度，horizontal 布局如宽超此尺寸则换行显示候选，设置为 0 不启用此功能
     min_height: 0                          # 候选框最小高度
     min_width: 10                          # 候选框最小宽度
-    border_width: 1                        # 边框宽度；又名 border
+    border_width: 0                        # 边框宽度；又名 border
     margin_x: 8                            # 主体元素和候选框的左右边距；为负值时，不显示候选框
     margin_y: 8                            # 主体元素的上下边距；为负值时，不显示候选框
     spacing: 13                            # inline_preedit 为否时，编码区域和候选区域的间距
@@ -102,9 +102,6 @@ style:
     hilite_padding: 3                      # 高亮区域和内部文字的间距，影响高亮区域大小
     # hilite_padding_x: 8                  # 高亮区域和内部文字的左右间距，如无特殊指定则依 hilite_padding 设置
     # hilite_padding_y: 8                  # 高亮区域和内部文字的上下间距，如无特殊指定则依 hilite_padding 设置
-    shadow_radius: 5                       # 阴影区域半径，为 0 不显示阴影；需要同时在配色方案中指定非透明的阴影颜色
-    shadow_offset_x: 2                     # 阴影左右偏移距离
-    shadow_offset_y: 2                     # 阴影上下偏移距离
     corner_radius: 8                       # 候选窗口圆角半径
     round_corner: 5                        # 候选背景色块圆角半径，又名 hilited_corner_radius
     # type: vertical                       # 布局设置，效果和 style 下的设置相同：
@@ -123,7 +120,13 @@ preset_color_schemes:
   wechat_light:
     name: 微信键盘浅色
     horizontal: true # true横排，false竖排
+    text_color: 0x424242 # 拼音行文字颜色
+    label_color: 0x878787 # 标签颜色
     back_color: 0xFFFFFF # 候选条背景色
+    shadow_color: 0x999999 # 候选条阴影色
+    shadow_radius: 5  # 阴影区域半径，为 0 不显示阴影；需要同时在配色方案中指定非透明的阴影颜色
+    shadow_offset_x: 2 # 阴影左右偏移距离
+    shadow_offset_y: 2 # 阴影上下偏移距离
     border_height: 0 # 窗口上下高度，大于圆角半径才生效
     border_width: 8 # 窗口左右宽度，大于圆角半径才生效
     border_color: 0x424242 # 边框颜色
@@ -131,13 +134,11 @@ preset_color_schemes:
     comment_text_color: 0x999999 # 拼音等提示文字颜色
     corner_radius: 5 # 窗口圆角
     hilited_corner_radius: 5 # 高亮圆角
-    font_face: PingFangSC # 候选词字体
-    font_point: 16 # 候选字大小
+    font_point: 13 # 候选字大小
     hilited_candidate_back_color: 0x75B100          # 第一候选项背景色
     hilited_candidate_text_color: 0xFFFFFF          # 第一候选项文字颜色
     hilited_candidate_shadow_color: 0x999999        # 阴影
     label_font_point: 12 # 候选编号大小
-    text_color: 0x424242 # 拼音行文字颜色
     inline_preedit: true # 拼音位于： 候选框 false | 行内 true
 
   # 以下是一个配色方案示例
