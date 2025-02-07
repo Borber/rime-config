@@ -71,7 +71,7 @@ style:
   # format using %@ and %c is deprecated since 1.0, Squirrel 1.0
   # %@ is automatically expanded to "[candidate] [comment]"
   # and %c is replaced by "[label]"
-  candidate_format: '[label]. [candidate] [comment]'  # 候选项格式化
+  candidate_format: '[label].[candidate][comment]'  # 候选项格式化
 
   # adjust the base line of text
   #base_offset: 0
@@ -88,14 +88,13 @@ preset_color_schemes:
   wechat_light:
     name: 微信键盘浅色
     horizontal: true # true横排，false竖排
-    back_color: 0xFFFFFF # 候选条背景色
+    back_color: 0xFFFFFF # 候选条背景色tiao xi
     border_height: 0 # 窗口上下高度，大于圆角半径才生效
     border_width: 8 # 窗口左右宽度，大于圆角半径才生效
-    candidate_format: "%c %@ " # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间
+    # candidate_format: "[label].[candidate] [comment]" # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间
     comment_text_color: 0x999999 # 拼音等提示文字颜色
     corner_radius: 5 # 窗口圆角
     hilited_corner_radius: 5 # 高亮圆角
-    font_face: PingFangSC # 候选词字体
     font_point: 16 # 候选字大小
     hilited_candidate_back_color: 0x75B100 # 第一候选项背景色
     hilited_candidate_text_color: 0xFFFFFF # 第一候选项文字颜色

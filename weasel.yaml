@@ -19,7 +19,7 @@ config_version: "2024-09-25"
 # 针对特定应用的设置
 app_options:
   firefox.exe:
-    inline_preedit: true   # 行内显示预编辑区：规避 <https://github.com/rime/weasel/issues/946>
+    inline_preedit: true # 行内显示预编辑区：规避 <https://github.com/rime/weasel/issues/946>
   # cmd.exe:               # 带 .exe 的进程名：Weasel 15.0 及之前版本须小写
   #   ascii_mode: true     # 英文模式
   # conhost.exe:
@@ -37,84 +37,82 @@ app_options:
   # nvim-qt.exe:
   #   ascii_mode: true
   #   vim_mode: true       # vim 模式, Esc <C-c> <C-[> 切换到 ascii 状态
-# [End of <app_options>]
+  # [End of <app_options>]
 
-# [global settings]
-show_notifications: true                   # 是否显示状态变化的通知：true；false；option_list（方案内的开头 option）
-show_notifications_time: 1200              # 通知显示的时间，单位 ms
-global_ascii: false                        # 切换为 ascii 模式时，是否影响所有窗口：true；false
+  # [global settings]
+show_notifications: true # 是否显示状态变化的通知：true；false；option_list（方案内的开头 option）
+show_notifications_time: 1200 # 通知显示的时间，单位 ms
+global_ascii: false # 切换为 ascii 模式时，是否影响所有窗口：true；false
 # [End of <global settings>]
 
 # [style]
 # 字体；候选项、候选窗口的行为、布局及样式
 style:
-  color_scheme: wechat_light               # 默认配色方案
+  color_scheme: wechat_light # 默认配色方案
   # color_scheme_dark: nord                # 深色模式下，Weasel 的配色方案，Windows 10 1809+ 可用
 
   # 全局字体
   # 格式：字体1:起始码位:结束码位:字重:字形,字体2……，字体会依次 fallback
   # 详细设定请参考 <https://github.com/rime/weasel/wiki/字體設定>
   font_face: "JetBrainsMono Nerd Font, JetBrainsMono Nerd Font Mono, LXGW Bright, monospace"
-  # label_font_face: "JetBrainsMono Nerd Font, JetBrainsMono Nerd Font Mono, LXGW Bright, monospace"       # 标签字体
-  # comment_font_face: "JetBrainsMono Nerd Font, JetBrainsMono Nerd Font Mono, LXGW Bright, monospace"     # 注释字体
-  font_point: 13                           # 全局字体字号
-  label_font_point: 14                     # 标签字体字号，不设定 fallback 到 font_point
-  comment_font_point: 12                   # 注释字体字号，不设定 fallback 到 font_point
+  font_point: 13 # 全局字体字号
+  label_font_point: 14 # 标签字体字号，不设定 fallback 到 font_point
+  comment_font_point: 12 # 注释字体字号，不设定 fallback 到 font_point
 
-  inline_preedit: true                     # 行内显示预编辑区：true；false
-  preedit_type: composition                # 预编辑区内容：composition（编码）； preview（选中的候选）；preview_all（全部候选）
+  inline_preedit: true # 行内显示预编辑区：true；false
+  preedit_type: composition # 预编辑区内容：composition（编码）； preview（选中的候选）；preview_all（全部候选）
 
-  fullscreen: false                        # 候选窗口全屏显示：true；false
-  horizontal: true                         # 候选项横排：true；false
-  vertical_text: false                     # 竖排文本：true；false
+  fullscreen: false # 候选窗口全屏显示：true；false
+  horizontal: true # 候选项横排：true；false
+  vertical_text: false # 竖排文本：true；false
   # text_orientation: horizontal           # 文本排列方向，效果和 `vertical_text` 相同：horizontal；vertical
-  vertical_text_left_to_right: false       # 竖排方向是否从左到右：true；false
-  vertical_text_with_wrap: false           # 文本竖排模式下，自动换行：true；false
-  vertical_auto_reverse: false             # 文本竖排模式下，候选窗口位于光标上方时倒序排列：true；false
+  vertical_text_left_to_right: false # 竖排方向是否从左到右：true；false
+  vertical_text_with_wrap: false # 文本竖排模式下，自动换行：true；false
+  vertical_auto_reverse: false # 文本竖排模式下，候选窗口位于光标上方时倒序排列：true；false
 
-  label_format: "%s"                       # 标签字符：例如 %s. 效果为 1. 2. 3. ....
-  mark_text: ""                            # 标记字符，显示在选中的候选标签前，需要在配色方案中指定颜色；如该项为空字符串 "" 而配色方案中 hilited_mark_color 非透明色，则显示 Windows 11 输入法风格标记
-  ascii_tip_follow_cursor: false           # 切换 ASCII 模式时，提示跟随鼠标，而非输入光标
-  enhanced_position: true                  # 无法定位候选框时，在窗口左上角显示候选框：true；false
-  display_tray_icon: false                 # 托盘显示独立于语言栏的额外图标：true；false
-  antialias_mode: default                  # 次像素反锯齿设定：default；force_dword；cleartype；grayscale；aliased
-  candidate_abbreviate_length: 30          # 候选项略写，超过此数字则用省略号代替。设置为 0 则不启用此功能
-  mouse_hover_ms: 0                        # ! 已弃用。鼠标悬停选词响应时间（ms），设置为 0 时禁用该功能
-  hover_type: none                         # 鼠标在候选窗口悬停时：none（无动作）；hilite（选中鼠标下的候选）；semi_hilite（高亮鼠标下的候选）
+  label_format: "%s" # 标签字符：例如 %s. 效果为 1. 2. 3. ....
+  mark_text: "" # 标记字符，显示在选中的候选标签前，需要在配色方案中指定颜色；如该项为空字符串 "" 而配色方案中 hilited_mark_color 非透明色，则显示 Windows 11 输入法风格标记
+  ascii_tip_follow_cursor: false # 切换 ASCII 模式时，提示跟随鼠标，而非输入光标
+  enhanced_position: true # 无法定位候选框时，在窗口左上角显示候选框：true；false
+  display_tray_icon: false # 托盘显示独立于语言栏的额外图标：true；false
+  antialias_mode: default # 次像素反锯齿设定：default；force_dword；cleartype；grayscale；aliased
+  candidate_abbreviate_length: 30 # 候选项略写，超过此数字则用省略号代替。设置为 0 则不启用此功能
+  mouse_hover_ms: 0 # ! 已弃用。鼠标悬停选词响应时间（ms），设置为 0 时禁用该功能
+  hover_type: none # 鼠标在候选窗口悬停时：none（无动作）；hilite（选中鼠标下的候选）；semi_hilite（高亮鼠标下的候选）
 
-  paging_on_scroll: true                   # 在候选窗口上滑动滚轮的行为：true（翻页）；false （选中下一个候选）
-  click_to_capture: false                  # 鼠标点击候选项，创建截图：true；false
+  paging_on_scroll: true # 在候选窗口上滑动滚轮的行为：true（翻页）；false （选中下一个候选）
+  click_to_capture: false # 鼠标点击候选项，创建截图：true；false
 
   layout:
-    baseline: 0                            # 字号百分比，与 linespacing 一同设置可解决字体跳动问题，设置为 0 为禁用
-    linespacing: 0                         # 字号百分比，参考 <https://github.com/rime/weasel/pull/1177>
-    align_type: center                     # 标签、候选文字、注解文字之间的相对对齐方式：top ; center ; bottom
-    max_height: 600                        # 候选框最大高度，文本竖排模式下如高度超此尺寸则换列显示候选，设置为 0 不启用此功能
-    max_width: 0                           # 候选框最大宽度，horizontal 布局如宽超此尺寸则换行显示候选，设置为 0 不启用此功能
-    min_height: 0                          # 候选框最小高度
-    min_width: 10                          # 候选框最小宽度
-    border_width: 0                        # 边框宽度；又名 border
-    margin_x: 8                            # 主体元素和候选框的左右边距；为负值时，不显示候选框
-    margin_y: 8                            # 主体元素的上下边距；为负值时，不显示候选框
-    spacing: 13                            # inline_preedit 为否时，编码区域和候选区域的间距
-    candidate_spacing: 22                  # 候选项之间的间距
-    hilite_spacing: 6                      # 候选项和相应标签的间距测试
-    hilite_padding: 3                      # 高亮区域和内部文字的间距，影响高亮区域大小
+    baseline: 0 # 字号百分比，与 linespacing 一同设置可解决字体跳动问题，设置为 0 为禁用
+    linespacing: 0 # 字号百分比，参考 <https://github.com/rime/weasel/pull/1177>
+    align_type: center # 标签、候选文字、注解文字之间的相对对齐方式：top ; center ; bottom
+    max_height: 600 # 候选框最大高度，文本竖排模式下如高度超此尺寸则换列显示候选，设置为 0 不启用此功能
+    max_width: 0 # 候选框最大宽度，horizontal 布局如宽超此尺寸则换行显示候选，设置为 0 不启用此功能
+    min_height: 0 # 候选框最小高度
+    min_width: 10 # 候选框最小宽度
+    border_width: 0 # 边框宽度；又名 border
+    margin_x: 8 # 主体元素和候选框的左右边距；为负值时，不显示候选框
+    margin_y: 8 # 主体元素的上下边距；为负值时，不显示候选框
+    spacing: 13 # inline_preedit 为否时，编码区域和候选区域的间距
+    candidate_spacing: 22 # 候选项之间的间距
+    hilite_spacing: 6 # 候选项和相应标签的间距测试
+    hilite_padding: 3 # 高亮区域和内部文字的间距，影响高亮区域大小
     # hilite_padding_x: 8                  # 高亮区域和内部文字的左右间距，如无特殊指定则依 hilite_padding 设置
     # hilite_padding_y: 8                  # 高亮区域和内部文字的上下间距，如无特殊指定则依 hilite_padding 设置
-    corner_radius: 8                       # 候选窗口圆角半径
-    round_corner: 5                        # 候选背景色块圆角半径，又名 hilited_corner_radius
+    corner_radius: 8 # 候选窗口圆角半径
+    round_corner: 5 # 候选背景色块圆角半径，又名 hilited_corner_radius
     # type: vertical                       # 布局设置，效果和 style 下的设置相同：
-                                          # horizontal（横向）；vertical（竖向） ; vertical_text（竖排文本） ; vertical+fullscreen（全屏） ; horizontal+fullscreen（横向全屏）
-# [End of <style>]
+    # horizontal（横向）；vertical（竖向） ; vertical_text（竖排文本） ; vertical+fullscreen（全屏） ; horizontal+fullscreen（横向全屏）
+    # [End of <style>]
 
-# [preset_color_schemes]
-# 配色设定
-# 在小狼毫用户目录新建 preview 文件夹，将自定义皮肤的截图重命名为 color_scheme_<name>.png 放入此文件夹，可以在「输入法设定」中看到自定义皮肤效果
+    # [preset_color_schemes]
+    # 配色设定
+    # 在小狼毫用户目录新建 preview 文件夹，将自定义皮肤的截图重命名为 color_scheme_<name>.png 放入此文件夹，可以在「输入法设定」中看到自定义皮肤效果
 
-# 小狼毫配色在线设计：
-# [RIME 西米](https://fxliang.github.io/RimeSeeMe/)
-# [小狼毫配色详解](https://github.com/rime/weasel/wiki/定制小狼毫配色)
+    # 小狼毫配色在线设计：
+    # [RIME 西米](https://fxliang.github.io/RimeSeeMe/)
+    # [小狼毫配色详解](https://github.com/rime/weasel/wiki/定制小狼毫配色)
 
 preset_color_schemes:
   wechat_light:
@@ -122,9 +120,9 @@ preset_color_schemes:
     horizontal: true # true横排，false竖排
     text_color: 0x424242 # 拼音行文字颜色
     label_color: 0x878787 # 标签颜色
-    back_color: 0xFFFFFF # 候选条背景色
+    back_color: 0xffffff # 候选条背景色
     shadow_color: 0x999999 # 候选条阴影色
-    shadow_radius: 5  # 阴影区域半径，为 0 不显示阴影；需要同时在配色方案中指定非透明的阴影颜色
+    shadow_radius: 5 # 阴影区域半径，为 0 不显示阴影；需要同时在配色方案中指定非透明的阴影颜色
     shadow_offset_x: 2 # 阴影左右偏移距离
     shadow_offset_y: 2 # 阴影上下偏移距离
     border_height: 0 # 窗口上下高度，大于圆角半径才生效
@@ -135,43 +133,43 @@ preset_color_schemes:
     corner_radius: 5 # 窗口圆角
     hilited_corner_radius: 5 # 高亮圆角
     font_point: 13 # 候选字大小
-    hilited_candidate_back_color: 0x75B100          # 第一候选项背景色
-    hilited_candidate_text_color: 0xFFFFFF          # 第一候选项文字颜色
-    hilited_candidate_shadow_color: 0x999999        # 阴影
+    hilited_candidate_back_color: 0x75b100 # 第一候选项背景色
+    hilited_candidate_text_color: 0xffffff # 第一候选项文字颜色
+    hilited_candidate_shadow_color: 0x999999 # 阴影
     label_font_point: 12 # 候选编号大小
     inline_preedit: true # 拼音位于： 候选框 false | 行内 true
 
   # 以下是一个配色方案示例
-  nord:                                      # 在 `style/color_schema` 指定的配色方案值
-    name: "远山／Nord"                       # 方案设置中显示的配色名称
-    author: Mirtle                           # 配色作者名称
-    color_format: rgba                       # 颜色格式：argb（0xaarrggbb）；rgba（0xrrggbbaa）；abgr（0xaabbggrr 默认）
+  nord:
+    # 在 `style/color_schema` 指定的配色方案值
+    name: "远山／Nord" # 方案设置中显示的配色名称
+    author: Mirtle # 配色作者名称
+    color_format: rgba # 颜色格式：argb（0xaarrggbb）；rgba（0xrrggbbaa）；abgr（0xaabbggrr 默认）
     # 默认配色
-    text_color: 0x2E3440                     # 文字
-    shadow_color: 0x000000b4                 # 阴影
-    label_color: 0x4C566A                    # 标签
-    comment_text_color: 0xD08770             # 注释
-    border_color: 0xECEFF4                   # 边框
-    back_color: 0xECEFF4                     # 背景
+    text_color: 0x2e3440 # 文字
+    shadow_color: 0xb4 # 阴影
+    label_color: 0x4c566a # 标签
+    comment_text_color: 0xd08770 # 注释
+    border_color: 0xeceff4 # 边框
+    back_color: 0xeceff4 # 背景
     # 普通候选项配色
-    candidate_back_color: 0xECEFF4           # 背景
+    candidate_back_color: 0xeceff4 # 背景
     # candidate_border_color:                # 边框
     # candidate_shadow_color:                # 阴影
-    candidate_text_color: 0x2E3440           # 文字
+    candidate_text_color: 0x2e3440 # 文字
     # 编码区域配色
-    hilited_text_color: 0x000000             # 文字
-    hilited_back_color: 0xEBCB8B             # 背景
+    hilited_text_color: 0x0 # 文字
+    hilited_back_color: 0xebcb8b # 背景
     # hilited_shadow_color:                  # 阴影
     # 选中的候选区域配色
-    hilited_mark_color: 0xBF616A             # 标签前的标记
-    hilited_label_color: 0x4C566A            # 标签
-    hilited_comment_text_color: 0xBF616A     # 注释
-    hilited_candidate_text_color: 0x2E3440   # 文字
-    hilited_candidate_border_color: 0x8FBCBB # 边框
-    hilited_candidate_back_color: 0x8FBCBB   # 背景
+    hilited_mark_color: 0xbf616a # 标签前的标记
+    hilited_label_color: 0x4c566a # 标签
+    hilited_comment_text_color: 0xbf616a # 注释
+    hilited_candidate_text_color: 0x2e3440 # 文字
+    hilited_candidate_border_color: 0x8fbcbb # 边框
+    hilited_candidate_back_color: 0x8fbcbb # 背景
     # hilited_candidate_shadow_color:        # 阴影
     # inline_preedit: false 时翻页箭头颜色，不设置则不显示箭头
     # nextpage_color: 0x000000               # 下一页
     # prevpage_color: 0x000000               # 上一页
-
-# [End of <preset_color_schemes>]
+    # [End of <preset_color_schemes>]
