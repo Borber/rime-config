@@ -98,10 +98,12 @@ style:
     candidate_spacing: 13 # 候选项之间的间距
     hilite_spacing: 0 # 候选项和相应标签的间距
     hilite_padding: 3 # 高亮区域和内部文字的间距，影响高亮区域大小
+
+    shadow_radius: 5 # 阴影区域半径，为 0 不显示阴影；需要同时在配色方案中指定非透明的阴影颜色
+    shadow_offset_x: 3 # 阴影左右偏移距离
+    shadow_offset_y: 3 # 阴影上下偏移距离
     # hilite_padding_x: 8                  # 高亮区域和内部文字的左右间距，如无特殊指定则依 hilite_padding 设置
     # hilite_padding_y: 8                  # 高亮区域和内部文字的上下间距，如无特殊指定则依 hilite_padding 设置
-    corner_radius: 8 # 候选窗口圆角半径
-    round_corner: 5 # 候选背景色块圆角半径，又名 hilited_corner_radius
     # type: vertical                       # 布局设置，效果和 style 下的设置相同：
     # horizontal（横向）；vertical（竖向） ; vertical_text（竖排文本） ; vertical+fullscreen（全屏） ; horizontal+fullscreen（横向全屏）
     # [End of <style>]
@@ -123,14 +125,14 @@ preset_color_schemes:
     back_color: 0xffffff # 候选条背景色
     shadow_color: 0x999999 # 候选条阴影色
     shadow_radius: 5 # 阴影区域半径，为 0 不显示阴影；需要同时在配色方案中指定非透明的阴影颜色
-    shadow_offset_x: 2 # 阴影左右偏移距离
-    shadow_offset_y: 2 # 阴影上下偏移距离
+    shadow_offset_x: 3 # 阴影左右偏移距离
+    shadow_offset_y: 3 # 阴影上下偏移距离
     border_height: 0 # 窗口上下高度，大于圆角半径才生效
     border_width: 8 # 窗口左右宽度，大于圆角半径才生效
     border_color: 0x424242 # 边框颜色
     candidate_format: '[label].[candidate][comment]' # 候选项格式化
     comment_text_color: 0x999999 # 拼音等提示文字颜色
-    corner_radius: 5 # 窗口圆角
+    corner_radius: 8 # 窗口圆角
     hilited_corner_radius: 5 # 高亮圆角
     font_point: 13 # 候选字大小
     hilited_candidate_back_color: 0x75b100 # 第一候选项背景色
