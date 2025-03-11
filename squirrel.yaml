@@ -39,17 +39,42 @@ app_options:
   #   ascii_mode: true    # 开启默认英文
   # com.microsoft.VSCode:
   #   ascii_mode: false   # 关闭默认英文
+  com.apple.Spotlight:
+    ascii_mode: true
+  com.runningwithcrayons.Alfred:
+    ascii_mode: true
+  com.apple.Terminal:
+    ascii_mode: true
+  com.microsoft.VSCode:
+    ascii_mode: true
+    ascii_punct: true
+  com.tencent.Lemon:
+    ascii_mode: true
+  com.apple.dt.Xcode:
+    ascii_mode: true
+  com.nektony.App-Cleaner-SII:
+    ascii_mode: true
+  com.xunyong.hapigo:
+    ascii_mode: true
+  com.termius-dmg.mac:
+    ascii_mode: true
+  com.raycast.macos:
+    ascii_mode: true
+  com.jetbrains.intellij:
+    ascii_mode: true
+  org.alacritty:
+    ascii_mode: true
 
 
 style:
   # 选择皮肤，亮色与暗色主题
-  color_scheme: purity_of_form_custom
-  color_scheme_dark: purity_of_form_custom
+  color_scheme: wechat_light
+  color_scheme_dark: wechat_light
 
   # 以下是预设选项。如果皮肤没写，则使用这些属性；如果皮肤写了，使用皮肤的。
 
   # 候选框与文字的排列方式
-  candidate_list_layout: stacked  # stacked | linear       皮肤横竖排显示是调整这个
+  candidate_list_layout: linear  # stacked | linear       皮肤横竖排显示是调整这个
   text_orientation: horizontal    # horizontal | vertical  文字方向
   # 拼音或词句是否显示在键入位置
   inline_preedit: true            # true | false  键入码显示位置
@@ -65,15 +90,15 @@ style:
   border_width: -2                # 外边框 宽
   line_spacing: 5                 # stacked竖向布局的行间距间距
   spacing: 8                      # 非linear行内模式下，预编辑文本与候选框之间的间距
-  shadow_size: 0                  # 阴影大小
+  shadow_size: 3                  # 阴影大小
   #surrounding_extra_expansion: 0 # 控制未高亮候选项背景相对于高亮项的大小，负值缩小，正值放大
 
   # 候选项格式化
-  # %@ 和 %c 在鼠须管 1.0 弃用，%@ 等同于 "[candidate] [comment]"，%c 于等同 "[label]"
-  candidate_format: '[label]. [candidate] [comment]'
+  # %@ 和 %c 在鼠须管 1.0 弃用，%@ 等同于 "[candidate] [comment]"，%c 等同于 "[label]"
+  candidate_format: '[label].[candidate][comment]'
 
   #base_offset: 0                 # 字基高
-  font_face: 'Avenir'
+  font_face: 'JetBrainsMono Nerd Font, JetBrainsMono Nerd Font Mono, LXGW Bright, monospace'
   font_point: 16
   #label_font_face: 'Avenir'
   #label_font_point: 12
@@ -83,6 +108,23 @@ style:
 
 # 皮肤列表
 preset_color_schemes:
+  wechat_light:
+    name: 微信键盘浅色
+    horizontal: true # true横排，false竖排
+    back_color: 0xFFFFFF # 候选条背景色tiao xi
+    border_height: 0 # 窗口上下高度，大于圆角半径才生效
+    border_width: 8 # 窗口左右宽度，大于圆角半径才生效
+    # candidate_format: "[label].[candidate] [comment]" # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间
+    comment_text_color: 0x999999 # 拼音等提示文字颜色
+    corner_radius: 5 # 窗口圆角
+    hilited_corner_radius: 5 # 高亮圆角
+    font_point: 16 # 候选字大小
+    hilited_candidate_back_color: 0x75B100 # 第一候选项背景色
+    hilited_candidate_text_color: 0xFFFFFF # 第一候选项文字颜色
+    label_font_point: 12 # 候选编号大小
+    text_color: 0x424242 # 拼音行文字颜色
+    inline_preedit: true # 拼音位于： 候选框 false | 行内 true
+
   # 对 purity_of_form 略微调整颜色，让色彩更柔和点，补全其他选项和注释
   purity_of_form_custom:
     name: "純粹的形式／Purity of Form Custom"

@@ -38,6 +38,8 @@ function M.func(input, seg, env)
         yield_cand(seg, os.date('%Y.%m.%d', current_time))
         yield_cand(seg, os.date('%Y%m%d', current_time))
         yield_cand(seg, os.date('%Y年%m月%d日', current_time):gsub('年0', '年'):gsub('月0', '月'))
+        local week_in_month = math.ceil(tonumber(os.date('%d', current_time)) / 7)
+        yield_cand(seg, string.format('%s%d周', os.date('%Y年%m月', current_time):gsub('年0', '年'):gsub('月0', '月'), week_in_month))
 
         -- 时间
     elseif (input == M.time) then
@@ -63,6 +65,9 @@ function M.func(input, seg, env)
         yield_cand(seg, os.date('%H:%M:%S', current_time))
         yield_cand(seg, period_name .. " " .. os.date("%I:%M", current_time))
         yield_cand(seg, os.date("%I:%M %p", current_time))
+    local tz = os.date("%z", current_time)
+    local iso_tz = (tz == "+0000" or tz == "-0000") and "Z" or tz:gsub("(%d%d)$", ":%1")
+    yield_cand(seg, os.date('%Y-%m-%dT%H:%M:%S', current_time) .. iso_tz)
         -- 带上时间划分时，很少有带秒数的，暂时注释掉
         -- yield_cand(seg, period_name .. " " .. os.date("%I:%M:%S", current_time))
         -- yield_cand(seg, os.date("%I:%M:%S %p", current_time))
