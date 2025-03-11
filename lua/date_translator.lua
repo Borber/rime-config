@@ -28,12 +28,20 @@ function M.func(input, seg, env)
         yield_cand(seg, os.date('%Y.%m.%d', current_time))
         yield_cand(seg, os.date('%Y%m%d', current_time))
         yield_cand(seg, os.date('%Y年%m月%d日', current_time):gsub('年0', '年'):gsub('月0','月'))
+        -- 添加“月内第几周”的选项
+        local day = tonumber(os.date('%d', current_time)) -- 获取当前日期的天数
+        local month = tonumber(os.date('%m', current_time)) -- 获取当前月份
+        local year = os.date('%Y', current_time)
+        local week_in_month = math.ceil(day / 7)
+        yield_cand(seg, string.format('%s%d周', os.date('%Y年%m月', current_time):gsub('年0', '年'):gsub('月0','月'), week_in_month))
 
     -- 时间
     elseif (input == M.time) then
         local current_time = os.time()
         yield_cand(seg, os.date('%H:%M', current_time))
         yield_cand(seg, os.date('%H:%M:%S', current_time))
+        yield_cand(seg, os.date('%Y-%m-%dT%H:%M:%S+08:00', current_time))
+
 
     -- 星期
     elseif (input == M.week) then
